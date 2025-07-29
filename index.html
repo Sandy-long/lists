@@ -98,6 +98,112 @@
         .card:nth-child(2) .card-title { color: #34A853; }
         .card:nth-child(3) .card-title { color: #EA4335; }
         .card:nth-child(4) .card-title { color: #FBBC05; }
+
+        /* Practice Section Styles */
+        .practice-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .practice-title {
+            color: #4285F4;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .scenario {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .scenario-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .scenario-instruction {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .dialogue {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .speaker {
+            font-weight: bold;
+            color: #4285F4;
+            margin-bottom: 5px;
+        }
+
+        .response-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .check-btn {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .check-btn:hover {
+            background-color: #3367D6;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            display: none;
+            font-size: 1.1rem;
+        }
+
+        .correct {
+            background-color: #E6F4EA;
+            color: #0F9D58;
+            border: 1px solid #0F9D58;
+        }
+
+        .incorrect {
+            background-color: #FCE8E6;
+            color: #EA4335;
+            border: 1px solid #EA4335;
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .card {
+                min-height: 300px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -177,5 +283,134 @@
             </div>
         </div>
     </div>
+
+    <!-- Practice Section -->
+    <div class="practice-section">
+        <h2 class="practice-title">练习对话</h2>
+        
+        <!-- Scenario 1 -->
+        <div class="scenario">
+            <div class="scenario-title">情景 1: 项目讨论</div>
+            <div class="scenario-instruction">
+                请用英语列举需要考虑的三个因素:
+            </div>
+            
+            <div class="dialogue">
+                <div class="speaker">同事:</div>
+                <div>"我们需要考虑哪些因素来启动这个项目?"</div>
+            </div>
+            
+            <div class="dialogue">
+                <div class="speaker">你:</div>
+                <div>"There are <span class="sequential">three</span> things to consider. <span class="sequential">First</span>, we must examine the budget. <span class="sequential">Second</span>..."</div>
+            </div>
+            
+            <input type="text" class="response-input" placeholder="Complete your response..." data-answer="we should analyze the timeline">
+            <button class="check-btn">检查答案</button>
+            <div class="feedback"></div>
+        </div>
+        
+        <!-- Scenario 2 -->
+        <div class="scenario">
+            <div class="scenario-title">情景 2: 客户分类</div>
+            <div class="scenario-instruction">
+                请用英语描述两种不同类型的客户:
+            </div>
+            
+            <div class="dialogue">
+                <div class="speaker">经理:</div>
+                <div>"你能分析一下我们的客户群体吗?"</div>
+            </div>
+            
+            <div class="dialogue">
+                <div class="speaker">你:</div>
+                <div>"There are <span class="sequential">two</span> kinds of customers. The <span class="sequential">first</span> is price-sensitive buyers who prioritize affordability. The <span class="sequential">second</span> is..."</div>
+            </div>
+            
+            <input type="text" class="response-input" placeholder="Complete your response..." data-answer="quality-focused buyers who value premium features">
+            <button class="check-btn">检查答案</button>
+            <div class="feedback"></div>
+        </div>
+        
+        <!-- Scenario 3 -->
+        <div class="scenario">
+            <div class="scenario-title">情景 3: 产品优缺点</div>
+            <div class="scenario-instruction">
+                请用英语列举产品的三个优点和一个缺点:
+            </div>
+            
+            <div class="dialogue">
+                <div class="speaker">客户:</div>
+                <div>"这个新产品有什么优缺点?"</div>
+            </div>
+            
+            <div class="dialogue">
+                <div class="speaker">你:</div>
+                <div>"We can see <span class="sequential">three</span> advantages and <span class="sequential">one</span> disadvantage. <span class="sequential">First</span>, it's cost-effective. <span class="sequential">Second</span>, it's user-friendly. <span class="sequential">Third</span>..."</div>
+            </div>
+            
+            <input type="text" class="response-input" placeholder="Complete your response..." data-answer="it has innovative features">
+            <button class="check-btn">检查答案</button>
+            <div class="feedback"></div>
+        </div>
+        
+        <!-- Scenario 4 -->
+        <div class="scenario">
+            <div class="scenario-title">情景 4: 渐进式列举</div>
+            <div class="scenario-instruction">
+                请用英语逐步列举远程办公的三个好处:
+            </div>
+            
+            <div class="dialogue">
+                <div class="speaker">同事:</div>
+                <div>"远程办公有哪些好处?"</div>
+            </div>
+            
+            <div class="dialogue">
+                <div class="speaker">你:</div>
+                <div>"<span class="sequential">One</span> benefit is better work-life balance. <span class="sequential">Another</span> is reduced commuting time. <span class="sequential">A third</span> advantage is..."</div>
+            </div>
+            
+            <input type="text" class="response-input" placeholder="Complete your response..." data-answer="increased productivity">
+            <button class="check-btn">检查答案</button>
+            <div class="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkButtons = document.querySelectorAll('.check-btn');
+            
+            checkButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const scenario = this.closest('.scenario');
+                    const input = scenario.querySelector('.response-input');
+                    const feedback = scenario.querySelector('.feedback');
+                    const correctAnswer = input.dataset.answer.toLowerCase();
+                    const userAnswer = input.value.trim().toLowerCase();
+                    
+                    if (userAnswer === correctAnswer) {
+                        feedback.textContent = "正确! 列举表达使用得很好!";
+                        feedback.className = "feedback correct";
+                    } else {
+                        feedback.textContent = `接近了! 更好的回答是: "${correctAnswer}"`;
+                        feedback.className = "feedback incorrect";
+                    }
+                    
+                    feedback.style.display = 'block';
+                });
+            });
+            
+            // Allow pressing Enter to check answers
+            const answerInputs = document.querySelectorAll('.response-input');
+            answerInputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        this.nextElementSibling.click();
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
