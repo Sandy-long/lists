@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing Expressions Cards</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f9fc;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, #e6f2ff, #f5f9fc);
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 800px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            min-height: 280px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .card-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .card-back {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+        }
+        
+        .card:hover .card-front {
+            display: none;
+        }
+        
+        .card:hover .card-back {
+            display: block;
+        }
+        
+        .sequential {
+            color: #4285F4;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #4285F4;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .divider {
+            height: 4px;
+            width: 100px;
+            background: linear-gradient(to right, #4285F4, #34A853);
+            margin-bottom: 30px;
+            border-radius: 2px;
+        }
+        
+        .card:nth-child(1) .card-title { color: #4285F4; }
+        .card:nth-child(2) .card-title { color: #34A853; }
+        .card:nth-child(3) .card-title { color: #EA4335; }
+        .card:nth-child(4) .card-title { color: #FBBC05; }
+    </style>
+</head>
+<body>
+    <h1>Listing</h1>
+    <div class="divider"></div>
+    
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-front">
+                <div class="card-title">Basic Quantity</div>
+                <div class="card-content">
+                    • There are <span class="sequential">three</span> things to consider. 
+                    <span class="sequential">First</span>... <span class="sequential">Second</span>... 
+                    <span class="sequential">Third</span>...
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="card-title">Basic Quantity</div>
+                <div class="card-content">
+                    There are three things to consider. First, we must examine the budget. Second, we should analyze the timeline. Third, we need to evaluate the potential risks.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-front">
+                <div class="card-title">Classification</div>
+                <div class="card-content">
+                    • There are <span class="sequential">two</span> kinds of... 
+                    The <span class="sequential">first</span> is... 
+                    The <span class="sequential">second</span> is...
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="card-title">Classification</div>
+                <div class="card-content">
+                    There are two kinds of customers. The first is price-sensitive buyers who prioritize affordability. The second is quality-focused buyers who value premium features.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-front">
+                <div class="card-title">Pros & Cons</div>
+                <div class="card-content">
+                    • We can see <span class="sequential">four</span> advantages and 
+                    <span class="sequential">two</span> disadvantages. 
+                    <span class="sequential">First</span>, advantages...
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="card-title">Pros & Cons</div>
+                <div class="card-content">
+                    We can see four advantages and two disadvantages. First, the advantages include cost savings, improved efficiency, better scalability, and user-friendly design. The disadvantages are higher initial investment and longer implementation time.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="card-front">
+                <div class="card-title">Progressive</div>
+                <div class="card-content">
+                    • <span class="sequential">One</span> is... <span class="sequential">Another</span> is... 
+                    A <span class="sequential">third</span> advantage is... 
+                    <span class="sequential">Finally</span>...
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="card-title">Progressive</div>
+                <div class="card-content">
+                    One benefit is increased productivity. Another is improved communication. A third advantage is enhanced collaboration. Finally, we see better overall performance as a result.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
